@@ -14,20 +14,6 @@ jobs:
       uses: azure/login@v1
       with:
         creds: ${{secrets.AZURE_CREDENTIALS}}
-  aml_train:
-    code: model
-    command: >-
-      python train.py
-      --training_data ${{inputs.training_data}}
-      --reg_rate 0.05
-    inputs:
-      training_data: 
-        type: uri_folder 
-        path: azureml:diabetes-dev-folder:1
-      reg_rate: 0.01
-    environment: azureml:AzureML-sklearn-0.24-ubuntu18.04-py37-cpu@latest
-    compute: azureml:clusterML2
-    experiment_name: Exp_mlops_v2
-    description: Learning End-to-end mlops-v2
+
 
 
