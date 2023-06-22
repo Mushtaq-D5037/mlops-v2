@@ -11,5 +11,6 @@ inputs:
   reg_rate: 0.01
 environment: azureml:AzureML-sklearn-0.24-ubuntu18.04-py37-cpu@latest
 compute: azureml:clusterML2
+display_name: GithubAction_diabetes
 experiment_name: Exp_mlops_v2
 description: Manually Triggering job through Github actions
