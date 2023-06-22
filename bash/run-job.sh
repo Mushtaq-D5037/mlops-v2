@@ -1,11 +1,10 @@
 job=$1
+echo "--------------------- $job"
 if [[ -z "$2" ]]
   then
     if [[ "$job" =~ job.yml ]]
     then
-      echo "----------------job: $job"
       run_id=$(az ml job create -f $job --query name -o tsv --set settings.force_rerun=True)
-      echo "---------------run-id : $run_id"
     else
       run_id=$(az ml job create -f $job --query name -o tsv)
     fi
