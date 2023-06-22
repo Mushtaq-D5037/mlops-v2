@@ -19,7 +19,7 @@ jobs:
       working-directory: bash
       continue-on-error: true
     - name: run job
-      run: bash ${GITHUB_WORKSPACE}/bash/run-job.sh job.yml
+      run: bash ${GITHUB_WORKSPACE}/bash/run-job.sh job.yml --debug
       working-directory: src
     
     
