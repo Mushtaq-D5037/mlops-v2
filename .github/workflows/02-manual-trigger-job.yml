@@ -22,7 +22,7 @@ jobs:
 #       run: bash ${GITHUB_WORKSPACE}/bash/run-job.sh job.yml
 #       working-directory: src
       run: |
-        chmod +x az ml job create --file job.yml
+       az ml job create --file job.yml
       working-directory: src
     
     
