@@ -20,7 +20,7 @@ jobs:
       continue-on-error: true
     - name: run job
       run: bash -x ../../../run-job.sh job.yml
-      working-directory: bash
+      working-directory: src
     
     
 
