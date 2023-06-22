@@ -19,9 +19,11 @@ jobs:
       working-directory: bash
       continue-on-error: true
     - name: run job
-      run: |
-        az ml job create --file job.yml
+      run: bash ${GITHUB_WORKSPACE}/scripts/run-job.sh job.yml
       working-directory: src
+#       run: |
+#         az ml job create --file job.yml
+#       working-directory: src
     
     
 
