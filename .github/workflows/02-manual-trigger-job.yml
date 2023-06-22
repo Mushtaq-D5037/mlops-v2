@@ -1,6 +1,16 @@
 name: Manually trigger an Azure Machine Learning job
 on:
   workflow_dispatch:
+  schedule:
+    - cron: "0 0/4 * * *"
+  pull_request:
+    branches:
+      - main
+      - sdk-preview
+    paths:
+      - src/job.yml
+      - bash/run-job.sh
+      - bash/setup.sh
 
 jobs:
   train:
