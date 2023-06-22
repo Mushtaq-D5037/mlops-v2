@@ -10,8 +10,11 @@ if [[ -z "$2" ]]
       run_id=$(az ml job create -f $job --query name -o tsv)
     fi
   else
+    echo "in Else"
+    echo "----------------job: $job"
     experiment_name=$2
     run_id=$(az ml job create -f $job --query name -o tsv --set experiment_name=$experiment_name --set settings.force_rerun=True)
+    echo "---------------run-id : $run_id"
 fi
 
 if [[ -z "$3" ]]
